@@ -412,12 +412,38 @@ https://app.code-check.io/openchallenges
 リポジトリ名にはデフォルトで  
 `codecheck-***` みたいな名前が入ってます
 
-
 作成すると 「作ったよ！」という表示とリンクが出るので  
 リンクをクリックしてリポジトリに行きましょう！
 -----
+作った直後は空かもしれませんが、  
+すぐにコードが現れるはずです。
 
+コードが生成された事が確認できたら  
+[Heroku](https://heroku.com) にアクセスしてください。
+-----
+### Heroku Application
+まずは [Heroku で空のアプリを作成](https://dashboard.heroku.com/new)しましょう。
 
+`App Name` は空でも自分でセットしても構いません。  
+変えたければ後から変更もできます ;)
+-----
+Deployment method から GitHub を選んで、
+さっき生成したリポジトリを指定して connect しましょう！
+
+次に master リポジトリに対してAutomatic deploys をオンにしたら  
+GitHub の方に戻ってリポジトリを編集します。
+-----
+### Procfile
+Procfile を編集して  
+Deploy 時に起動するコマンドを指定しましょう！
+
+今回のリポジトリは `main.js` がサーバー起動のファイルなので
+
+```
+web: node main.js
+```
+
+と記入して保存
 
 =====
 
