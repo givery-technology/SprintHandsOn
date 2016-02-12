@@ -290,9 +290,10 @@ function rowStyle(data, index) {
 今回のテストは **結合テスト** です。
 -----
 ### テストコード
-スライドでコードが出てくるけど、見づらいので gist 用意しました  
+スライドでコードが出てくるけど、  
+見づらいので gist 用意しました  
 https://gist.github.com/takayukioda/494079672aae767cd4f7
----
+-----
 ### テストコード
 プログラムの挙動を確認するためのコード
 
@@ -401,7 +402,8 @@ https://app.code-check.io/openchallenges
 #### Try Challenge
 まずは `Try Challenge` ボタンを押しましょう。
 
-すぐに始まってカウントダウンが始まるわけじゃないので安心 ;)
+安心してください  
+すぐにカウントダウンが始まるわけじゃないです ;)
 -----
 #### Fork to GitHub
 `Fork to GitHub` というボタンを押して、リポジトリを作成しましょう。
@@ -414,13 +416,14 @@ https://app.code-check.io/openchallenges
 -----
 
 
+
 =====
 
 ### Portfolio
 
 -----
 
-### テストコードの見方
+### api-first-spec の見かた
 ```javascript
 var API = spec.define({
   // エンドポイントのベース部分
