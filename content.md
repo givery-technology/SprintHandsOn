@@ -8,6 +8,7 @@
 
 ### Takayuki Oda
 GitHub: github.com/takayukioda  
+Twitter: twitter.com/da0shi  
 @Givery, Inc.
 
 =====
@@ -17,9 +18,22 @@ GitHub: github.com/takayukioda
 - コンテンツのおさらい
 - 今日のゴール確認
 - 用語解説
-- テストについて
-- Hands On
-- オリジナル機能のアイディア出し
+- Hands-on
+
+Note:
+前半3項目で40分ほどを想定
+Hands-on 2時間  
+20分は Hands-on 中の api-first-spec の説明で無くなるかも
+
+Hands-on の中では
+- [Heroku Deploy](https://app.code-check.io/orgs/codecheck_official/challenges/69)
+- [Portfolio](https://app.code-check.io/orgs/codecheck_official/challenges/74)
+
+の2つのチャレンジを実施予定。
+Heroku の Deploy 経験が無い人が居なければ飛ばして hands-on の時間を増やすかも。
+
+api-first-spec 等に関しては Portfolio の方に移った時に説明
+api-first-spec の説明で 20 分かかるかも
 
 =====
 
@@ -32,7 +46,7 @@ GitHub: github.com/takayukioda
 
 =====
 
-## ゴールの確認
+## 今日のゴールの確認
 -----
 GitHub 上で管理されている
 -----
@@ -45,23 +59,39 @@ Test が通る事を確認して
 Heroku に Deploy する
 -----
 GitHub 上で管理されている  
+
 Node.js で実装した  
+
 REST API サーバーを  
+
 Test が通る事を確認して  
+
 Heroku に Deploy する
 -----
-あとはオリジナル機能のアイディアを出す
+要約すると  
+REST API サーバーをNode.js で実装してHeroku に Deploy
+-----
+乱暴にいうと  
+[このチャレンジ](https://app.code-check.io/orgs/codecheck_official/challenges/74)を終わらせる
+-----
+
+余裕があれば追加機能の実装も
 
 =====
 
 ## 用語の確認
 
 - GitHub
-- Heroku
 - Node.js
 - REST API
-- Deploy
 - Test
+- Heroku
+- Deploy
+
+Note:
+用語の解説は一つ一つ分からない人がいるかを聞いていく。
+いる場合は下に掘り下げたりするけど、居なければそのまま次の内容にスライド
+
 
 =====
 
@@ -73,18 +103,46 @@ Social Coding をキーワードに、OSS 文化の中心地として
 開発者から圧倒的な支持を得ている
 
 Givery も僕個人も大ファン
+-----
+### Git
+ソフトウェア開発におけるデファクトスタンダードとなった  
+ソースコード管理ツール （バージョン管理ツールとも）
+-----
+### Git なにそれな貴方に
+-----
+### Git を使う意味
+編集履歴が見れるようになるよ！  
+「お、こいつ中々やるやん」って思われるよ！
 
-=====
-
-## Heroku
-
-インフラ管理を劇的に楽にしてくれる、  
-サービスのホスティングサービス
-
-面倒なインフラ環境の構築を簡略化し、  
-「アドオン」という形で提供してくれる。
-
-codecheck も Heroku を使ってホスティングされていたり。
+アピールしたいことは富士山のようにあるけど、  
+グッとこらえるよ！
+-----
+### 今回使う最低限のコマンド
+- git clone
+- git status
+- git add .
+- git commit -m "Improve!"
+- git log
+- git push origin master
+-----
+#### git clone
+GitHub からソースコードをダウンロードする  
+コマンドでダウンロードするのは同期を楽にするため
+-----
+#### git status
+今のファイルの変更状況を見る
+-----
+#### git add .
+今まで変更した全てのファイルを履歴の保存対象に含める
+-----
+#### git commit -m "Improve!"
+履歴を一言添えて保存する。
+-----
+#### git log
+編集履歴を確認する
+-----
+#### git push origin master
+編集履歴を GitHub と同期させる
 
 =====
 
@@ -96,18 +154,49 @@ JavaScript をブラウザ以外でも実行できるようにしたで！！
 サーバーでも使えるようにした JavaScript 実行環境。
 
 今回お世話になります。
+-----
+### JavaScript
+知らないって言われたら色々な意味で泣いちゃうくらい有名な言語
+
+ブラウザで動く唯一のプログラミング言語  
+ちなみにコンパイラを必要としないスクリプト言語  
+C++ や Java といった言語とは違った概念を取り入れた言語  
+
+その気軽さとキモさからファンが沢山。嫌う人も沢山。
 
 =====
 
-## REST
+## REST API
+
+REST の思想に則った設計を行っている Web API
+
+`GET /users` とか `POST /projects` とかとか
+-----
+### REST
 
 最近の Web API 設計の主流となっている設計パターン。
 REpresentational State Transfer の略
 
 URL と HTTP 通信のメソッドを利用して  
 「リソース」と「リソースに対する操作」を表現する。
-
-`GET /users` とか `POST /projects` とかとか
+-----
+#### 操作とリソースの例
+-----
+#### `GET /users`
+users というリソースを GET する。  
+=> ユーザーの一覧取得
+-----
+#### `GET /users/:name`
+users の `:name` で指定されたリソースを GET する。
+=> 指定されたユーザーの詳細取得
+-----
+#### `POST /projects`
+projects というリソースに POST する。
+=> プロジェクトを作成
+-----
+#### `DELETE /projects/:id`
+`:id` で指定された projects のリソースを DELETE する
+=> プロジェクトを削除
 -----
 ### エンドポイント
 
@@ -129,18 +218,6 @@ Web API にアクセスする際の URI の事。
 
 =====
 
-## Deploy
-
-ソースコード等をサーバー側に送り、  
-サービスの内容を最新の状態にアップグレードする事
-
-元々は「軍隊を戦闘配備する・布陣を敷く」という  
-軍事用語だそうな。
-
-へぇ〜
-
-=====
-
 ## Test
 
 決して学校の試験の事ではありません。
@@ -152,9 +229,13 @@ codecheck ではテストを通らないとデプロイ禁止です。
 -----
 ### 色々なテスト
 
-- ブラックボックステスト / ホワイトボックステスト
-- 単体テスト (Unit test) / 結合テスト (Integration test) /  
-統合テスト (General test)
+- ブラックボックステスト
+- ホワイトボックステスト
+- 単体テスト (Unit test)
+- 結合テスト (Integration test)
+- などなど
+-----
+### ブラックボックス / ホワイトボックス
 -----
 ### ブラックボックステスト
 偶数かを判定する even 関数があった時に
@@ -179,20 +260,51 @@ function even (x) {
 
 を確認する。
 -----
-今回は **ブラックボックステスト** のみを扱います。
+今回のテストは **ブラックボックステスト** です。
+-----
+### 単体 / 結合
+前提として「自身が実装したプログラム」に着目している  
+（外部のライブラリとかは考慮に入れないことが普通）
+-----
+### 単体テスト (Unit Test)
+ある一つのプログラムに着目し、その動作をテストする事
+```javascript
+assert.equal(even(4), true);
+assert.equal(even(1), false);
+assert.equal(even(-6), true);
+```
+-----
+### 結合テスト (Integration Test)
+ある複数のプログラムを組み合わせて作った機能に着目し、  
+その動作をテストする事
+```javascript
+function rowStyle(data, index) {
+  var cssClass = even(index)? "even": "odd";
+  var row = document.creteElement('tr');
+  row.textContent = data;
+  row.className = cssClass;
+  return row;
+}
+```
+-----
+今回のテストは **結合テスト** です。
 -----
 ### テストコード
-
+スライドでコードが出てくるけど、見づらいので gist 用意しました  
+https://gist.github.com/takayukioda/494079672aae767cd4f7
+---
+### テストコード
 プログラムの挙動を確認するためのコード
+
 ```javascript
-console.log("引数を2乗した値を返す square 関数のテスト");
-if (square(4) === 16) {
+console.log("even 関数のテスト");
+if (even(3) === false) {
   console.log("You pass the test!");
 } else {
   console.log("You fail the test...");
 }
 console.log("マイナス値でも動作するかのテスト");
-if (square(-3) === 9) {
+if (even(-4) === true) {
   console.log("You pass the test!");
 } else {
   console.log("You fail the test...");
@@ -200,7 +312,7 @@ if (square(-3) === 9) {
 ```
 ```bash
 $ node pure.js
-引数を2乗した値を返す square 関数のテスト
+even 関数のテスト
 You pass the test!
 マイナス値でも動作するかのテスト
 You pass the test!
@@ -213,23 +325,47 @@ You pass the test!
 **テストのためのフレームワーク**
 
 ```javascript
-describe("Square function", function() {
-  it("should return squared value", function() {
-    assert.equal(square(4), 16);
+describe("even function", function() {
+  it("should return false on odd number", function() {
+    assert.equal(even(3), false);
   });
-  it("should work for negative value", function() {
-    assert.equal(square(-3), 9);
+  it("should work for negative number", function() {
+    assert.equal(even(-4), true);
   });
 });
 ```
 ```bash
 $ mocha framework.js
-  Squeare function
-    ✓ should return squared value
-    ✓ should work for negative value
+  even function
+    ✓ should return false on odd number
+    ✓ should work for negative number
 
   2 passing (9ms)
 ```
+
+=====
+
+## Heroku
+
+インフラ管理を劇的に楽にしてくれる、  
+サービスのホスティングサービス
+
+面倒なインフラ環境の構築を簡略化し、  
+「アドオン」という形で提供してくれる。
+
+codecheck も Heroku を使ってホスティングされていたり。
+
+=====
+
+## Deploy
+
+ソースコード等をサーバー側に送り、  
+サービスの内容を最新の状態にアップグレードする事
+
+元々は「軍隊を戦闘配備する・布陣を敷く」という  
+軍事用語だそうな。
+
+へぇ〜
 
 =====
 
@@ -242,11 +378,28 @@ REST API のテスト用に作られた テストフレームワーク
 -----
 ### 使い方はハンズオンの中でお伝えします
 
+Note:
+ここまでで 40 分  
+一つ一つを丁寧に説明していたらもっとかかるかも
+
 =====
 
 ## ハンズオン
 
 =====
+
+### Heroku Deploy
+https://app.code-check.io/orgs/codecheck_official/challenges/69
+
+https://app.code-check.io/openchallenges  
+から探せます。
+-----
+
+=====
+
+### Portfolio
+
+-----
 
 ### テストコードの見方
 ```javascript
