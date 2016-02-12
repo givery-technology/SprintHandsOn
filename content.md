@@ -386,6 +386,10 @@ Note:
 
 ## ハンズオン
 
+Note:
+Heroku Deploy で 30 分
+Portfolio で 1時間半 取れる事を目標に
+
 =====
 
 ### Heroku Deploy
@@ -394,6 +398,21 @@ https://app.code-check.io/orgs/codecheck_official/challenges/69
 https://app.code-check.io/openchallenges  
 から探せます。
 -----
+#### Try Challenge
+まずは `Try Challenge` ボタンを押しましょう。
+
+すぐに始まってカウントダウンが始まるわけじゃないので安心 ;)
+-----
+#### Fork to GitHub
+`Fork to GitHub` というボタンを押して、リポジトリを作成しましょう。
+
+デフォルトでは `codecheck-***` みたいな名前が入ってると思います。  
+
+
+作成すると 「作ったよ！」という表示とリンクが出るので  
+リンクをクリックしてリポジトリに行きましょう！
+-----
+
 
 =====
 
