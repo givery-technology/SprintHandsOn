@@ -10,7 +10,14 @@
 GitHub: github.com/takayukioda  
 Twitter: twitter.com/da0shi  
 @Givery, Inc.
+-----
+Givery において
+- Scala でのバックエンド開発  
+- Ansible や docker を用いたインフラ周りの整備  
+- Sprint やオフィシャルなコンテンツの制作 / マネジメント
 
+等をしています。
+今はコンテンツのマネジメントが主になってます。
 =====
 
 ## 流れ
