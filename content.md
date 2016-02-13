@@ -450,7 +450,22 @@ Deploy 時に起動するコマンドを指定しましょう！
 web: node main.js
 ```
 
-と記入して保存、commit します！
+と記入して保存、commit　そして push します。
+-----
+### テストを確認
+
+まず、どの Heroku アプリケーションにアクセスするかを
+`account.json` で指定しましょう！
+
+ついでに commit して push しておきましょう :)
+-----
+ターミナル（コマンドプロンプト上）で以下のコマンドを実行して、　　
+テストが通るかの確認をしましょう！
+
+```javascript
+$ npm install
+$(npm bin)/mocha specifications
+```
 
 =====
 
