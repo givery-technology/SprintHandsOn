@@ -10,7 +10,14 @@
 GitHub: github.com/takayukioda  
 Twitter: twitter.com/da0shi  
 @Givery, Inc.
+-----
+Givery において
+- Scala でのバックエンド開発  
+- Ansible や docker を用いたインフラ周りの整備  
+- Sprint やオフィシャルなコンテンツの制作 / マネジメント
 
+等をしています。
+今はコンテンツのマネジメントが主になってます。
 =====
 
 ## 流れ
@@ -406,16 +413,44 @@ https://app.code-check.io/openchallenges
 すぐにカウントダウンが始まるわけじゃないです ;)
 -----
 #### Fork to GitHub
-`Fork to GitHub` というボタンを押して、リポジトリを作成しましょう。
+`Fork to GitHub` というボタンを押して  
+リポジトリを作成しましょう。
 
-デフォルトでは `codecheck-***` みたいな名前が入ってると思います。  
-
+リポジトリ名にはデフォルトで  
+`codecheck-***` みたいな名前が入ってます
 
 作成すると 「作ったよ！」という表示とリンクが出るので  
 リンクをクリックしてリポジトリに行きましょう！
 -----
+作った直後は空かもしれませんが、  
+すぐにコードが現れるはずです。
 
+コードが生成された事が確認できたら  
+[Heroku](https://heroku.com) にアクセスしてください。
+-----
+### Heroku Application
+まずは [Heroku で空のアプリを作成](https://dashboard.heroku.com/new)しましょう。
 
+`App Name` は空でも自分でセットしても構いません。  
+変えたければ後から変更もできます ;)
+-----
+Deployment method から GitHub を選んで、
+さっき生成したリポジトリを指定して connect しましょう！
+
+次に master リポジトリに対してAutomatic deploys をオンにしたら  
+GitHub の方に戻ってリポジトリを編集します。
+-----
+### Procfile
+Procfile を編集して  
+Deploy 時に起動するコマンドを指定しましょう！
+
+今回のリポジトリは `main.js` がサーバー起動のファイルなので
+
+```
+web: node main.js
+```
+
+と記入して保存、commit します！
 
 =====
 
