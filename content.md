@@ -78,7 +78,7 @@ Heroku に Deploy する
 要約すると  
 REST API サーバーをNode.js で実装してHeroku に Deploy
 -----
-乱暴にいうと  
+もっというと  
 [このチャレンジ](https://app.code-check.io/orgs/codecheck_official/challenges/74)を終わらせる
 -----
 
