@@ -10,7 +10,9 @@
 GitHub: github.com/takayukioda  
 Twitter: twitter.com/da0shi  
 @Givery, Inc.
+
 -----
+
 Givery において
 - Scala でのバックエンド開発  
 - Ansible や docker を用いたインフラ周りの整備  
@@ -55,17 +57,29 @@ api-first-spec の説明で 20 分かかるかも
 =====
 
 ## 今日のゴールの確認
+
 -----
+
 GitHub 上で管理されている
+
 -----
+
 Node.js で実装した
+
 -----
+
 REST API サーバーを
+
 -----
+
 Test が通る事を確認して
+
 -----
+
 Heroku に Deploy する
+
 -----
+
 GitHub 上で管理されている  
 
 Node.js で実装した  
@@ -75,12 +89,17 @@ REST API サーバーを
 Test が通る事を確認して  
 
 Heroku に Deploy する
+
 -----
+
 要約すると  
 REST API サーバーをNode.js で実装してHeroku に Deploy
+
 -----
+
 もっというと  
 [このチャレンジ](https://app.code-check.io/orgs/codecheck_official/challenges/74)を終わらせる
+
 -----
 
 余裕があれば追加機能の実装も
@@ -111,20 +130,28 @@ Social Coding をキーワードに、OSS 文化の中心地として
 開発者から圧倒的な支持を得ている
 
 Givery も僕個人も大ファン
+
 -----
+
 ### Git
 ソフトウェア開発におけるデファクトスタンダードとなった  
 ソースコード管理ツール （バージョン管理ツールとも）
+
 -----
+
 ### Git なにそれな貴方に
+
 -----
+
 ### Git を使う意味
 編集履歴が見れるようになるよ！  
 「お、こいつ中々やるやん」って思われるよ！
 
 アピールしたいことは富士山のようにあるけど、  
 グッとこらえるよ！
+
 -----
+
 ### 今回使う最低限のコマンド
 - git clone
 - git status
@@ -132,23 +159,35 @@ Givery も僕個人も大ファン
 - git commit -m "Improve!"
 - git log
 - git push origin master
+
 -----
+
 #### git clone
 GitHub からソースコードをダウンロードする  
 コマンドでダウンロードするのは同期を楽にするため
+
 -----
+
 #### git status
 今のファイルの変更状況を見る
+
 -----
+
 #### git add .
 今まで変更した全てのファイルを履歴の保存対象に含める
+
 -----
+
 #### git commit -m "Improve!"
 履歴を一言添えて保存する。
+
 -----
+
 #### git log
 編集履歴を確認する
+
 -----
+
 #### git push origin master
 編集履歴を GitHub と同期させる
 
@@ -162,7 +201,9 @@ JavaScript をブラウザ以外でも実行できるようにしたで！！
 サーバーでも使えるようにした JavaScript 実行環境。
 
 今回お世話になります。
+
 -----
+
 ### JavaScript
 知らないって言われたら色々な意味で泣いちゃうくらい有名な言語
 
@@ -179,7 +220,9 @@ C++ や Java といった言語とは違った概念を取り入れた言語
 REST の思想に則った設計を行っている Web API
 
 `GET /users` とか `POST /projects` とかとか
+
 -----
+
 ### REST
 
 最近の Web API 設計の主流となっている設計パターン。
@@ -187,31 +230,45 @@ REpresentational State Transfer の略
 
 URL と HTTP 通信のメソッドを利用して  
 「リソース」と「リソースに対する操作」を表現する。
+
 -----
+
 #### 操作とリソースの例
+
 -----
+
 #### `GET /users`
 users というリソースを GET する。  
 => ユーザーの一覧取得
+
 -----
+
 #### `GET /users/:name`
 users の `:name` で指定されたリソースを GET する。
 => 指定されたユーザーの詳細取得
+
 -----
+
 #### `POST /projects`
 projects というリソースに POST する。
 => プロジェクトを作成
+
 -----
+
 #### `DELETE /projects/:id`
 `:id` で指定された projects のリソースを DELETE する
 => プロジェクトを削除
+
 -----
+
 ### エンドポイント
 
 Web API にアクセスする際の URI の事。  
 ホスト名等、基本的に変更のないベース部分と  
 リソースを意味するパス部分に分かれる。
+
 -----
+
 ### エンドポイント
 
 `https://api.example.com/v1/users`
@@ -224,6 +281,8 @@ Web API にアクセスする際の URI の事。
 ドキュメント等ではベース部分を省略して  
 `/users` のようにパス部分のみで表記される事が多い
 
+例： https://developer.github.com/v3/pulls/
+
 =====
 
 ## Test
@@ -234,7 +293,9 @@ Web API にアクセスする際の URI の事。
 その確認内容がコードに落とし込んだものが「テストコード」
 
 codecheck ではテストを通らないとデプロイ禁止です。
+
 -----
+
 ### 色々なテスト
 
 - ブラックボックステスト
@@ -242,16 +303,22 @@ codecheck ではテストを通らないとデプロイ禁止です。
 - 単体テスト (Unit test)
 - 結合テスト (Integration test)
 - などなど
+
 -----
+
 ### ブラックボックス / ホワイトボックス
+
 -----
+
 ### ブラックボックステスト
 偶数かを判定する even 関数があった時に
 - `even(4) === true`
 - `even(1) === false`
 
 となるかを確認する。
+
 -----
+
 ### ホワイトボックステスト
 以下のコードがあった時に
 ```javascript
@@ -267,13 +334,19 @@ function even (x) {
 - x に 1 を入れた時に下の else 文にマッチするか？
 
 を確認する。
+
 -----
+
 今回のテストは **ブラックボックステスト** です。
+
 -----
+
 ### 単体 / 結合
 前提として「自身が実装したプログラム」に着目している  
 （外部のライブラリとかは考慮に入れないことが普通）
+
 -----
+
 ### 単体テスト (Unit Test)
 ある一つのプログラムに着目し、その動作をテストする事
 ```javascript
@@ -281,7 +354,9 @@ assert.equal(even(4), true);
 assert.equal(even(1), false);
 assert.equal(even(-6), true);
 ```
+
 -----
+
 ### 結合テスト (Integration Test)
 ある複数のプログラムを組み合わせて作った機能に着目し、  
 その動作をテストする事
@@ -294,9 +369,13 @@ function rowStyle(data, index) {
   return row;
 }
 ```
+
 -----
+
 今回のテストは **結合テスト** です。
+
 -----
+
 ### テストコード
 スライドでコードが出てくるけど、  
 見づらいので gist 用意しました  
@@ -326,7 +405,9 @@ You pass the test!
 マイナス値でも動作するかのテスト
 You pass the test!
 ```
+
 -----
+
 ### テストフレームワーク
 生のコードだと書くのシンドイ & 集計が面倒  
 あと「なんのためのテストか」をまとめるのも大変
@@ -384,7 +465,9 @@ REST API のテスト用に作られた テストフレームワーク
 
 指定された URL に対して指定されたメソッドでリクエスト送信  
 期待するレスポンスが返ってくるかを判定
+
 -----
+
 ### 使い方はハンズオンの中でお伝えします
 
 Note:
@@ -406,13 +489,17 @@ https://app.code-check.io/orgs/codecheck_official/challenges/69
 
 https://app.code-check.io/openchallenges  
 から探せます。
+
 -----
+
 #### Try Challenge
 まずは `Try Challenge` ボタンを押しましょう。
 
 安心してください  
 すぐにカウントダウンが始まるわけじゃないです ;)
+
 -----
+
 #### Fork to GitHub
 `Fork to GitHub` というボタンを押して  
 リポジトリを作成しましょう。
@@ -422,25 +509,33 @@ https://app.code-check.io/openchallenges
 
 作成すると 「作ったよ！」という表示とリンクが出るので  
 リンクをクリックしてリポジトリに行きましょう！
+
 -----
+
 作った直後は空かもしれませんが、  
 すぐにコードが現れるはずです。
 
 コードが生成された事が確認できたら  
 [Heroku](https://heroku.com) にアクセスしてください。
+
 -----
+
 ### Heroku Application
 まずは [Heroku で空のアプリを作成](https://dashboard.heroku.com/new)しましょう。
 
 `App Name` は空でも自分でセットしても構いません。  
 変えたければ後から変更もできます ;)
+
 -----
+
 Deployment method から GitHub を選んで、
 さっき生成したリポジトリを指定して connect しましょう！
 
 次に master リポジトリに対してAutomatic deploys をオンにしたら  
 GitHub の方に戻ってリポジトリを編集します。
+
 -----
+
 ### Procfile
 Procfile を編集して  
 Deploy 時に起動するコマンドを指定しましょう！
@@ -452,14 +547,18 @@ web: node main.js
 ```
 
 と記入して保存、commit　そして push します。
+
 -----
+
 ### テストを確認
 
 まず、どの Heroku アプリケーションにアクセスするかを
 `account.json` で指定しましょう！
 
 ついでに commit して push しておきましょう :)
+
 -----
+
 ターミナル（コマンドプロンプト上）で以下のコマンドを実行して、　　
 テストが通るかの確認をしましょう！
 
@@ -521,7 +620,9 @@ var API = spec.define({
 });
 
 ```
+
 -----
+
 ### テストの確認方法
 まずはサーバーを起動させておく
 ```bash
@@ -533,7 +634,9 @@ $ node index.js
 ```bash
 $ $(npm bin)/mocha specifications/localhost
 ```
+
 -----
+
 ### テスト結果の見方
 ```bash
 $ $(npm bin)/mocha specifications/localhost
@@ -567,12 +670,16 @@ $ $(npm bin)/mocha specifications/localhost
 =====
 
 ## 参考文献
+
 -----
+
 ### ライブラリ
 - mocha
 - chai
 - api-first-spec
+
 -----
+
 ### テストの種類とか
 - http://gihyo.jp/dev/serial/01/tech_station/0001
 - http://magazine.rubyist.net/?0042-FromCucumberToTurnip#l1
