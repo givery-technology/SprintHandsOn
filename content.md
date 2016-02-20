@@ -487,6 +487,19 @@ Portfolio で 1時間半 取れる事を目標に
 =====
 
 ### Heroku Deploy
+
+元となってるリポジトリは  
+https://github.com/code-check/challenge-heroku-deploy
+
+キーワードは
+
+- Procfile
+- Buildpacks
+- Addon (特に Rails 使う人は)
+
+-----
+
+Node.js の Heroku Deploy Challenge は以下から
 https://app.code-check.io/orgs/codecheck_official/challenges/69
 
 https://app.code-check.io/openchallenges  
