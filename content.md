@@ -1,6 +1,6 @@
 ## Sprint ハンズオン
 
-@Sony
+@DMM
 
 http://givery-technology.github.io/SprintHandsOn
 
@@ -382,6 +382,11 @@ function rowStyle(data, index) {
 スライドでコードが出てくるけど、  
 見づらいので gist 用意しました  
 https://gist.github.com/takayukioda/494079672aae767cd4f7
+
+スライドをPCで開いていなかった人は  
+http://givery-technology.github.io/SprintHandsOn  
+にアクセス！
+
 -----
 ### テストコード
 プログラムの挙動を確認するためのコード
@@ -480,9 +485,15 @@ Note:
 
 ## ハンズオン
 
+今回のテンプレを用意しました！  
+https://gist.github.com/takayukioda/39ca7626b8175bc26983
+
+スライドをPCで開いていなかった人は  
+http://givery-technology.github.io/SprintHandsOn  
+にアクセス！
+
 Note:
-Heroku Deploy で 30 分
-Portfolio で 1時間半 取れる事を目標に
+Portfolio challenge から初めて、Heroku は GitHub と連携させるだけにする
 
 =====
 
