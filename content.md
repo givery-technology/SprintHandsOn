@@ -1,6 +1,6 @@
 ## Sprint ハンズオン
 
-@DMM.comラボ
+@DMM.com Labo
 
 http://givery-technology.github.io/SprintHandsOn
 
